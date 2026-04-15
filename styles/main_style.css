@@ -1,7 +1,9 @@
 :root {
   --text-color: black;
   --border-color: black;
-}
+
+  --text-area-width: 30%;
+  --text-area-height: 300px;
 
 .invalidInput {
   --text-color: red;
@@ -16,6 +18,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    align-self: center;
 }
 
 .mainPageText
@@ -32,27 +35,34 @@ h1.mainPageText {
     font-size: 100px;
 }
 
-textarea.textInputField {
-  height: 260px;
+.textInputArea {
+  margin: 5%;
+}
+
+.textInputBack { 
+  height: var(--text-area-height);
   width: 30%;
-  margin-top: 2%;
   border-radius: 50px;
-  box-sizing: border-box;
   border: 2px solid var(--border-color);
-  color: var(--text-color);
   background-color: #ffffff;
+}
+
+textarea.textInputField {
+  height: 70%;
+  width: 90%;
+  color: var(--text-color);
+  border:none;
   resize: none;
-  font-size: 24px;
+  font-size: 30px;
   text-align: left;
-  padding: 1.1%;
 }
 
 textarea.textInputField:focus {
-  outline-color: var(--border-color);
+  outline: none;
 }
 
 label.characterCounter {
-  width: 30%;
+  width: 90%;
   margin-top: 5px;
   font-size: 19px;
   text-align: right;
