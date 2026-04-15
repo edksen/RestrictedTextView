@@ -6,9 +6,23 @@
     </head>
     <body>
         <h1 class="mainPageText center">Type Your Text Here!</h1>
-        <div class="center" style="flex-direction: column;">
-            <textarea id="main_input_field" class="textInputField mainPageText" placeholder="Input your text here"></textarea>
-            <label class="characterCounter mainPageText">1000000000000000000000000/250</label>
+        <div id="container" class="center" style="flex-direction: column;">
+            <textarea id="main_input_field" class="textInputField mainPageText" placeholder="Input your text here" oninput="onInputChange()"></textarea>
+            <label id="character_counter" class="characterCounter mainPageText"></label>
         </div>
     </body>
+
+    <script>
+        function onInputChange() {
+            let symbolsMaxSize = 250;
+
+            let textLength = document.getElementById("main_input_field").value.length;
+            let label = document.getElementById("character_counter");
+            label.textContent = `${textLength}/${symbolsMaxSize}`;
+
+            document.getElementById("container").classList.toggle("invalidInput", textLength > symbolsMaxSize);
+        }
+
+        onInputChange();
+    </script>
 </html>

@@ -52,7 +52,7 @@ textarea.textInputField:focus {
 }
 
 label.characterCounter {
-  width: 760px;
+  width: 30%;
   margin-top: 5px;
   font-size: 19px;
   text-align: right;
