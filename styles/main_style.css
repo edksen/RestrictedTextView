@@ -4,6 +4,7 @@
 
   --text-area-width: 30%;
   --text-area-height: 300px;
+}
 
 .invalidInput {
   --text-color: red;
@@ -68,4 +69,3 @@ label.characterCounter {
   text-align: right;
   color: var(--text-color);
 }
-
