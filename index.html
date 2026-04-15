@@ -5,22 +5,23 @@
         <link rel="stylesheet" href="./styles/main_style.css">
     </head>
     <body>
-        <h1 class="mainPageText center">Type Your Text Here!</h1>
+        <h1 class="mainPageText center">Write your Message</h1>
         <div id="container" class="textInputArea center">
-            <textarea id="main_input_field" class="textInputField mainPageText" placeholder="Input your text here" oninput="onInputChange()"></textarea>
+            <textarea id="main_input_field" class="textInputField mainPageText" maxlength="250" placeholder="Start typing..." oninput="onInputChange()"></textarea>
             <label for="main_input_field" id="character_counter" class="characterCounter mainPageText"></label>
         </div>
     </body>
 
     <script>
         function onInputChange() {
-            let symbolsMaxSize = 250;
-
-            let textLength = document.getElementById("main_input_field").value.length;
             let label = document.getElementById("character_counter");
-            label.textContent = `${textLength}/${symbolsMaxSize}`;
+            let textArea = document.getElementById("main_input_field");
 
-            document.getElementById("container").classList.toggle("invalidInput", textLength > symbolsMaxSize);
+            let textLength = textArea.value.length;
+            let symbolsMaxSize = textArea.maxLength; 
+
+            label.textContent = `${textLength}/${symbolsMaxSize}`;
+            document.getElementById("container").classList.toggle("invalidInput", textLength >= symbolsMaxSize);
         }
 
         onInputChange();
